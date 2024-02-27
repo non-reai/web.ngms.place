@@ -37,21 +37,3 @@ async function getAuthCode() {
 		element.innerText = authCode
 	})
 }
-
-function readCookie(name) {
-	var nameEQ = name + "=";
-	var ca = document.cookie.split(';');
-	for(var i=0;i < ca.length;i++) {
-		var c = ca[i];
-		while (c.charAt(0)==' ') c = c.substring(1,c.length);
-		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-	}
-	return null;
-}
-
-document.getElementById("user-id").innerText = readCookie("web-ngms-place-user-id")
-
-
-document.getElementById("website-url").innerText = window.location.href
-
-getAuthCode()
